@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bb0hs4d57agiv"]
+
+[ext_resource type="Script" uid="uid://d283vc1pmiif8" path="res://Player/player.gd" id="1_l8h54"]
+[ext_resource type="Texture2D" uid="uid://7jn2v28q44ol" path="res://icon.svg" id="2_4ntmi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8h54"]
+size = Vector2(232.01117, 29.253448)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4ntmi"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D" unique_id=2024074247]
+script = ExtResource("1_l8h54")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1827131891]
+position = Vector2(236, 359)
+texture = ExtResource("2_4ntmi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1692884198]
+position = Vector2(244.00003, 270)
+scale = Vector2(1.3501537, 1.0307802)
+shape = SubResource("RectangleShape2D_l8h54")
+
+[node name="TextEdit" type="TextEdit" parent="CollisionShape2D" unique_id=2078371327]
+offset_left = -99.98864
+offset_top = -8.731247
+offset_right = 99.24793
+offset_bottom = 10.671539
+theme_override_font_sizes/font_size = 8
+text = "Healthbar ni siya"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1585239970]
+replication_config = SubResource("SceneReplicationConfig_4ntmi")

@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="disasterRush2D"
+run/main_scene="uid://0k856xrstfx"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+NetworkManager="*uid://cok2v8ts055up"
 
 [display]
 
@@ -22,6 +27,12 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="disasterRush2D"
+
+[layer_names]
+
+2d_physics/layer_1="Players"
+2d_physics/layer_2="Dry Land / Buildings"
+2d_physics/layer_3="Water / Obstacles"
 
 [physics]
 
